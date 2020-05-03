@@ -1,0 +1,32 @@
+{
+  "name": "homebridge-airthings-waveplus",
+  "version": "1.0.0",
+  "description": "Airthings Wave Plus bridge for Homebridge",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iler/homebridge-airthings-waveplus.git"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "airthings",
+    "wave-plus",
+    "radon",
+    "temperature",
+    "co2",
+    "humidity",
+    "homekit",
+    "apple",
+    "node.js",
+    "bluetooth"
+  ],
+  "author": "Ilari Mäkelä",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iler/homebridge-airthings-waveplus/issues"
+  },
+  "homepage": "https://github.com/iler/homebridge-airthings-waveplus#readme"
+}
