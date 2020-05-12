@@ -1,6 +1,6 @@
 {
   "name": "homebridge-airthings-waveplus",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Airthings Wave Plus bridge for Homebridge",
   "main": "index.js",
   "scripts": {
