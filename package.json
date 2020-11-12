@@ -1,7 +1,8 @@
 {
+  "private": false,
   "displayName": "Airthings WavePlus",
   "name": "homebridge-airthings-waveplus",
-  "version": "0.1.0"
+  "version": "0.1.1",
   "description": "A Homebridge plugin for Airthings WavePlus.",
   "author": "ecoen66",
   "license": "ISC",
