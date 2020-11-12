@@ -9,7 +9,7 @@ const devices = {};
 module.exports = (homebridge) => {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
-  homebridge.registerAccessory('airthings-waveplus', 'Aithings Waveplus', AirthingsWaveplus, true);
+  homebridge.registerAccessory('airthings-wave-plus', 'Airthings WavePlus', AirthingsWaveplus, true);
 };
 
 class AirthingsWaveplus {

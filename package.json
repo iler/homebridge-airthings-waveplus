@@ -1,15 +1,11 @@
 {
+  "displayName": "Airthings WavePlus",
   "name": "homebridge-airthings-waveplus",
-  "version": "0.1.0",
-  "description": "Airthings Wave Plus bridge for Homebridge",
+  "version": "0.1.0"
+  "description": "A Homebridge plugin for Airthings WavePlus.",
+  "author": "ecoen66",
+  "license": "ISC",
   "main": "index.js",
-  "scripts": {
-    "test": ""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iler/homebridge-airthings-waveplus.git"
-  },
   "keywords": [
     "homebridge-plugin",
     "airthings",
@@ -23,10 +19,22 @@
     "node.js",
     "bluetooth"
   ],
-  "author": "Ilari Mäkelä",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iler/homebridge-airthings-waveplus/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecoen66/homebridge-airthings-wave-plus.git"
   },
-  "homepage": "https://github.com/iler/homebridge-airthings-waveplus#readme"
+  "bugs": {
+    "url": "https://github.com/ecoen66/homebridge-airthings-wave-plus/issues"
+  },
+  "scripts": {
+    "test": ""
+  },
+	"dependencies": {
+		"node-airthings-waveplus": ">=0.2.0"
+	},
+	"devDependencies": {},
+	"engines": {
+		"homebridge": ">=0.2.0",
+		"node": ">=0.12.0"
+	}
 }
