@@ -1,7 +1,7 @@
 {
   "private": false,
   "displayName": "Airthings WavePlus",
-  "name": "homebridge-airthings-wave-plus",
+  "name": "homebridge-wave-plus",
   "version": "0.1.1",
   "description": "A Homebridge plugin for Airthings WavePlus.",
   "author": "ecoen66",
@@ -22,10 +22,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ecoen66/homebridge-airthings-wave-plus.git"
+    "url": "git+https://github.com/ecoen66/homebridge-wave-plus.git"
   },
   "bugs": {
-    "url": "https://github.com/ecoen66/homebridge-airthings-wave-plus/issues"
+    "url": "https://github.com/ecoen66/homebridge-wave-plus/issues"
   },
   "scripts": {
     "test": ""
