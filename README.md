@@ -3,7 +3,8 @@ With this [Homebridge](https://github.com/nfarina/homebridge) plugin you can use
 
 This code is heavily based on the work of iler's [homebridge-airthings-waveplus](https://github.com/iler/homebridge-airthings-waveplus) accessory, and the work of [pakastin](https://github.com/pakastin/homebridge-ruuvitag)!
 
-This code is a work in progress.  There is currently a known issue around a bluetooth Stack Overflow in @abandonware/noble.
+This code is a work in progress.  There is currently a known issue around a bluetooth buffer overflow error in @abandonware/noble:
+"processLeAdvertisingReport: Caught illegal packet (buffer overflow): RangeError [ERR_OUT_OF_RANGE]: The value of "offset" is out of range. It must be >= 0 and <= 4. Received 6"
 
 # Configuration
 
