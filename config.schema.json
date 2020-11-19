@@ -1,0 +1,42 @@
+{
+	"pluginAlias": "Airthings WavePlus",
+	"pluginType": "accessory",
+	"schema": {
+		"name": {
+			"title": "Name",
+			"type": "string",
+			"required": true,
+      "description": "The WavePlus device name to show in HomeKit.",
+			"default": "My WavePlus"
+		},
+		"serial": {
+			"title": "Serial Number",
+			"type": "string",
+			"required": true,
+      "description": "The WavePlus serial number from the device's sticker.",
+			"default": "1234567890"
+		},
+		"disableTemp": {
+			"title": "disableTemp",
+			"type": "boolean",
+			"required": false,
+      "description": "If false, will display the WavePlus temperature reading in HomeKit.",
+			"default": "false"
+		},
+		"disableHumidity": {
+			"title": "disableHumidity",
+			"type": "boolean",
+			"required": false,
+      "description": "If false, will display the WavePlus humidity reading in HomeKit.",
+			"default": "false"
+		},
+		"frequency": {
+			"title": "frequency",
+			"type": "integer",
+			"required": false,
+      "description": "If set, provides the frequency (in seconds) for updating HomeKit.",
+			"default": 60
+		}
+	}
+}
+
