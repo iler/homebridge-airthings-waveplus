@@ -9,7 +9,7 @@
       "description": "The WavePlus device name to show in HomeKit.",
 			"default": "My WavePlus"
 		},
-		"serial": {
+		"serialNumber": {
 			"title": "Serial Number",
 			"type": "string",
 			"required": true,
