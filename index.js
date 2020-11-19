@@ -1,4 +1,4 @@
-const waveplus = require('node-airthings-waveplus');
+const WavePlus = require('node-airthings-waveplus');
 
 let Service;
 let Characteristic;
@@ -15,35 +15,41 @@ module.exports = (homebridge) => {
 class AirthingsWaveplus {
   constructor (log, config) {
     this.log = log;
-    this.name = config.name;
-    this.serialNumber = config.serialNumber;
     this.config = config;
+    this.name = this.config.name;
+    this.serialNumber = this.config.serialNumber;
     this.updatedAt = 0;
+    this.manufacturer="Airthings";
+    this.model="Wave Plus";
 
+    var wavePlus
     WavePlus.on('found', wavePlus => {
-      devices[wavePlus.id] = wavePlus;
-      waitingDevices[wavePlus.id] && waitingDevices[wavePlus.id](wavePlus);
-      delete waitingDevices[wavePlus.id];
-      debug('found', wavePlus.id);
+      devices[wavePlus.serialNumber] = wavePlus;
+      log('found', wavePlus.id, 'serial number', wavePlus.serialNumber);
+      log('address', wavePlus.address);
+      log('connectable', wavePlus.connectable);      
+      waitingDevices[wavePlus.serialNumber] && waitingDevices[wavePlus.serialNumber](wavePlus);
+      delete waitingDevices[wavePlus.serialNumber];
     });
 
-    if (!config.disableTemp) {
+    if (!this.config.disableTemp) {
       this.tempService = new Service.TemperatureSensor(this.name);
       this.tempService
         .getCharacteristic(Characteristic.CurrentTemperature)
         .setProps({ minValue: -200, maxValue: 200, minStep: 0.01 });
     }
-    if (!config.disableHumidity) {
+    if (!this.config.disableHumidity) {
       this.humidityService = new Service.HumiditySensor(this.name);
       this.humidityService
         .getCharacteristic(Characteristic.CurrentRelativeHumidity)
         .setProps({ minValue: 0, maxValue: 100, minStep: 0.5 });
     }
 
-    var wavePlus;
     var listenTo;
     listenTo = (wavePlus) => {
+    	log('listening...');
       wavePlus.on('updated', (data) => {
+      	log('Updated data:', data);
         this.update(wavePlus, data);
       });
     }
@@ -51,7 +57,7 @@ class AirthingsWaveplus {
     if (wavePlus) {
       listenTo(wavePlus);
     } else {
-      waitingDevices[this.id] = (wavePlus) => {
+      waitingDevices[this.serialNumber] = (wavePlus) => {
         listenTo(wavePlus);
       };
     }
@@ -87,11 +93,15 @@ class AirthingsWaveplus {
       }
     }
 
-    debug(data);
   }
 
   getServices () {
-    const services = [];
+ 		const informationService = new Service.AccessoryInformation()
+			.setCharacteristic(Characteristic.Manufacturer, this.manufacturer)
+			.setCharacteristic(Characteristic.Model, this.model)
+			.setCharacteristic(Characteristic.SerialNumber, this.serialNumber)
+
+		const services = [informationService]
 
     if (this.tempService) {
       services.push(this.tempService);
